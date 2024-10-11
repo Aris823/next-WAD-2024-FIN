@@ -1,15 +1,22 @@
-
 import mongoose from "mongoose";
 
 const customerSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
-  dateOfBirth: Date,
-  memberNumber: Number,
-  interests: String
-
+  dateOfBirth: {
+    type: Date,
+    required: true, 
+  },
+  memberNumber: {
+    type: Number,
+    required: true, 
+  },
+  interests: {
+    type: String,
+    required: true, 
+  },
 });
 
 const Customer = mongoose.models.customer || mongoose.model("customer", customerSchema);
