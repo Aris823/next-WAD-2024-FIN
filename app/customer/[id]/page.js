@@ -1,7 +1,7 @@
-"use client"; 
+"use client";
 
 import { useEffect, useState } from "react";
-import { useParams } from "next/navigation"; 
+import { useParams } from "next/navigation";
 
 export default function CustomerDetail() {
   const [customer, setCustomer] = useState(null); // Customer state
@@ -44,10 +44,13 @@ export default function CustomerDetail() {
         <div className="bg-white shadow p-6 rounded-lg">
           <h1 className="text-2xl font-bold text-blue-800">{customer.name}</h1>
           <p className="mt-2 text-lg">Member Number: {customer.memberNumber}</p>
-          <p className="mt-2 text-gray-600">Date of Birth: {customer.dateOfBirth}</p>
+          <p className="mt-2 text-gray-600">
+            Date of Birth: {new Date(customer.dateOfBirth).toLocaleDateString()} {/* Format date here */}
+          </p>
           <p className="mt-4 text-sm">Interests: {customer.interests}</p>
         </div>
       </main>
     </div>
   );
+
 }

@@ -20,7 +20,7 @@ export default function Home() {
         const formattedCustomers = customers.map((customer) => {
             customer.id = customer._id
             return customer
-        ;
+                ;
         });
         setCustomerList(formattedCustomers);
     }
@@ -106,7 +106,7 @@ export default function Home() {
                             <div>Date Of Birth</div>
                             <div>
                                 <input
-                                    name="name"
+                                    name="dateOfBirth"
                                     type="date"
                                     {...register("dateOfBirth", { required: true })}
                                     className="border border-black w-full"
